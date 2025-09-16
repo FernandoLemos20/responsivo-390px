@@ -1,0 +1,82 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+
+.container1,
+.container2 {
+    display: flex;
+    flex-direction: row; /* Layout horizontal (lado a lado) */
+    align-items: center; /* Alinha verticalmente para um visual limpo */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+
+.content-block {
+    background-color: #fff;
+    border-radius: 8px;;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem; /* Usando 'rem' para adaptabilidade */
+    flex: 1; /* Garante que os blocos dividam o espaço igualmente */
+    min-width: 0; /* Evita que os blocos flexíveis transbordem */
+}
+
+
+.content-block img {
+    width: 100%; /* Ocupa 100% da largura do seu contêiner (.content-block) */
+    max-width: 100%; /* Garante que a imagem nunca ultrapasse o contêiner */
+    height: auto; /* Mantém a proporção da imagem ao redimensionar */
+    border-radius: 8px;
+    display: block; /* Remove espaços extras que podem aparecer abaixo da imagem */
+}
+
+
+.content-block h2 {
+    font-size: 1.5rem; /* Unidade relativa para o título */
+    color: #333;
+    margin-top: 0;
+}
+
+.content-block p {
+    font-size: 1rem; /* Unidade relativa para o parágrafo */
+    color: #666;
+    line-height: 1.6; /* Melhora a legibilidade */
+}
+
+/* 2. LAYOUT EMPILHADO PARA TELAS MENORES (ABAIXO DE 768px) */
+@media (max-width: 768px) {
+    .container1,
+    .container2 {
+        flex-direction: column; /* Muda o layout para vertical (empilhado) */
+    }
+
+    /* Ajuste fino para o texto em telas médias */
+    .content-block {
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 390px) {
+    body {
+        padding: 10px; /* Menos preenchimento nas laterais em telas pequenas */
+    }
+
+    .content-block {
+        padding: 1rem; /* Menos preenchimento interno nos cards */
+    }
+
+    .content-block h2 {
+        font-size: 1.3rem; /* Reduz o tamanho do título */
+    }
+
+    .content-block p {
+        font-size: 0.9rem; /* Reduz o tamanho do parágrafo para melhor ajuste */
+    }
+}
